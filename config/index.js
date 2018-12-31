@@ -1,10 +1,10 @@
 const config = {
     development: {
-        api: "http://127.0.0.1:8888"
+        api: "http://192.168.1.88:8888"
         //api: "https://blog-api.lee-cloud.xyz"
     },
     production: {
-    	api: "http://127.0.0.1:8888"
+    	api: "http://192.168.1.88:8888"
         //api: "https://blog-api.lee-cloud.xyz"
     }
 };
