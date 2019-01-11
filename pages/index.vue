@@ -60,11 +60,11 @@ export default {
         let sharings = [];
         let notes = [];
         try {
-            //console.log(Vue.http)
+            console.log(Vue.http)
             const codingsData = await Vue.http.get("/post?classify=coding&limit=10");
             const sharingsData = await Vue.http.get("/post?classify=sharing&limit=10");
             const notesData = await Vue.http.get("/post?classify=note&limit=10");
-            
+//            console.log(codingsData)
             codings = JSON.parse(codingsData);
             sharings = JSON.parse(sharingsData);
             notes = JSON.parse(notesData);
@@ -86,7 +86,7 @@ export default {
             };
         } catch (e) {
             console.log(e)
-            ctx.error({ statusCode: 500, message: "出错啦" });
+            ctx.error({ statusCode: 500, message: "加载首页出错啦" });
         }
     },
     data () {
@@ -103,7 +103,7 @@ export default {
         };
     },
     mounted () {
-         console.log("------------------------------")
+         console.log("--------------pages -> index -> mounted -------------")
         //console.log(this.$api.PUBLIC_COMMENTS)
     },
     filters: {

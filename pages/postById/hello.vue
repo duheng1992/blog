@@ -48,12 +48,12 @@ export default {
         let data = {};
         try {
             data = await Vue.http.get(`post/${params.blog_id}`);
-            //console.log(JSON.parse(data)[0])
+            console.log(JSON.parse(data))
             return {
                 data: JSON.parse(data)[0]
             };
         } catch (e) {
-            error({ statusCode: 404, message: "出错啦" });
+            error({ statusCode: 404, message: "加载文章详情出错啦" });
         }
     },
     //fetch ({ store, params }) {},

@@ -30,10 +30,10 @@ export default {
         let posts = [];
         try {
             const res = await Vue.http.get(`post?classify=${classify}&orderby=${orderby}&limit=999`);
-            // console.log(res)
+             console.log(res)
             posts = JSON.parse(res);
         } catch (e) {
-            error({ statusCode: 500, message: "出错啦" });
+            error({ statusCode: 500, message: "加载文章列表出错啦" });
         }
         posts.forEach(item => {
             item.slug = pinyin(item.title, { style: pinyin.STYLE_NORMAL }).join("-");
